@@ -21,3 +21,37 @@ const allWagesFor = function () {
     return payable
 }
 
+function createEmployeeRecord([firstName, familyName, title, payPerHour]){
+    return { 
+        firstName,
+        familyName,
+        title,
+        payPerHour,
+        timeInEvents: [],
+        timeOutEvents :[]
+
+    }
+}
+
+function createEmployeeRecords(records){
+    const recordObjList = []
+    records.forEach((record)=>{
+        recordObjList.push(createEmployeeRecord(record))
+    })
+    return recordObjList
+}
+
+function createTimeInEvent(time){
+    return{
+        type:"TimeIn",
+        hour:time.slice(-4 , time.length),
+        date:time.slice(11)
+    }
+}
+
+function createTimeoutEvent(){}
+function hoursWorkedOnDate(){}
+function wagesEarnedOnDate(){}
+
+function findEmployeeByFirstName(){}
+function calculatePayroll(){}
